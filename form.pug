@@ -1,0 +1,15 @@
+doctype html
+html(lang="ja")
+  head
+    meta(charset="UTF-8")
+    title 就職先アンケート
+  body
+    h1 どちらで働きたい？
+    form(method="post" action="/enquetes/workplace")
+      span 名前:
+      input(type="text" name="name")
+      input(type="radio" name="work-place" value="東京")
+      span 東京
+      input(type="radio" name="work-place" value="仙台")
+      span 仙台
+      button(type="submit") 投稿

@@ -1,5 +1,6 @@
 'use strict';
 const http = require('http');
+const pug = require('pug');
 const server = http.createServer((req, res) => {
   //ACCESS LOG
   //console.log()
@@ -15,9 +16,11 @@ const server = http.createServer((req, res) => {
   switch (req.method) {
     case 'GET':
       //res.write('GET' + req.url);
-      const fs = require('fs');
-      const rs = fs.createReadStream('./form.html');
-      rs.pipe(res);
+      //const fs = require('fs');
+      //const rs = fs.createReadStream('./form.html');
+      //rs.pipe(res);
+      res.write(pug.renderFile('./form.pug'));
+      res.end()
       break;
     case 'POST':
       //res.write('POST' + req.url);
