@@ -38,7 +38,7 @@ $ vagrant halt
 * Do not forget to make Procfile and app.json when you upload to heroku!
 
 ## Server Name
-https://thawing-reef-86835.herokuapp.com/
-
+* https://thawing-reef-86835.herokuapp.com/enquetes/work-place
+* https://thawing-reef-86835.herokuapp.com/enquetes/work-tokyo
 ## Credit
 N予備校（https://www.nnn.ed.nico/）
