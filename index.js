@@ -61,7 +61,8 @@ const server = http.createServer((req, res) => {
 }).on('clientError', (e) => {
   console.error('[' + new Date() + '] Client Error', e);
 });
-const port = 8000;
+//選択的代入によってPORTに設定されている値を取得
+const port = process.env.PORT || 8000;
 server.listen(port, () => {
   console.info('[' + new Date() + ']Listening on ' + port);
 });

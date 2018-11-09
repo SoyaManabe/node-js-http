@@ -1,0 +1,8 @@
+{
+  "name": "Enquetes",
+  "description": "Enquates which place do you want to work.",
+  "repository": "https://github.com/SoyaManabe/node-js-http",
+  "logo": "",
+  "keywords": ["node"],
+  "image": "heroku/nodejs"
+}
