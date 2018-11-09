@@ -34,6 +34,9 @@ $ logout
 $ vagrant halt
 ```
 
+## Warning
+* Do not forget to make Procfile and app.json when you upload to heroku!
+
 ## Server Name
 https://thawing-reef-86835.herokuapp.com/
 
