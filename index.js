@@ -19,7 +19,19 @@ const server = http.createServer((req, res) => {
       //const fs = require('fs');
       //const rs = fs.createReadStream('./form.html');
       //rs.pipe(res);
-      res.write(pug.renderFile('./form.pug'));
+      if (req.url === '/enquetes/work-place') {
+        res.write(pug.renderFile('./form.pug', {
+          path: req.url,
+          firstItem: '東京',
+          secondItem: '仙台'
+        }));
+      } else if (req.url === '/enquetes/work-tokyo') {
+        res.write(pug.renderFile('./form.pug', {
+          path: req.url,
+          firstItem: '東京23区内',
+          secondItem: '東京23区外'
+        }));
+      }
       res.end()
       break;
     case 'POST':

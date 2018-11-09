@@ -5,11 +5,11 @@ html(lang="ja")
     title 就職先アンケート
   body
     h1 どちらで働きたい？
-    form(method="post" action="/enquetes/workplace")
+    form(method="post" action="path")
       span 名前:
       input(type="text" name="name")
-      input(type="radio" name="work-place" value="東京")
-      span 東京
-      input(type="radio" name="work-place" value="仙台")
-      span 仙台
+      input(type="radio" name="favorite" value=firstItem)
+      span #{firstItem}
+      input(type="radio" name="favorite" value=secondItem)
+      span #{secondItem}
       button(type="submit") 投稿
