@@ -34,5 +34,8 @@ $ logout
 $ vagrant halt
 ```
 
+## Server Name
+https://thawing-reef-86835.herokuapp.com/
+
 ## Credit
 N予備校（https://www.nnn.ed.nico/）
