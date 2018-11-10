@@ -1,7 +1,15 @@
 'use strict';
 const http = require('http');
 const pug = require('pug');
-const server = http.createServer((req, res) => {
+//const server = http.createServer((req, res) => {
+//for basic authorization
+const auth =require('http-auth');
+const basic = auth.basic(
+  { realm: 'Enquetes Area.'},
+  (username, password, callback) => {
+    callback(username === 'guest' && password === 'xaXZJQmE');
+  });
+const server = http.createServer(basic, (req,res) => {
   //ACCESS LOG
   //console.log()
   //console.info() info
@@ -9,6 +17,13 @@ const server = http.createServer((req, res) => {
   //comsole.error() stderr
   const now = new Date();
   console.info('[' + now + '] Requested by ' + req.connection.remoteAddress);
+  if (req.url === '/logout') {
+    res.writeHead(401, {
+      'Content-Type': 'text/plain; charset=utf-8'
+    });
+    res.end('ログアウトしました');
+    return;
+  }
   res.writeHead(200, {
     'Content-Type': 'text/html; charset=utf-8'
   });
@@ -46,7 +61,7 @@ const server = http.createServer((req, res) => {
         const decoded = decodeURIComponent(body);
         console.info('[' + now +'] 投稿: ' + decoded);
         res.write('<!DOCTYPE html><html lang="ja"><body><h1>' +
-          decoded + 'が投稿されました</h1></body></html>');
+          decoded + 'が投稿されました</h1><a href="/logout">ログアウト</a></body></html>');
         res.end();
       });
       break;
